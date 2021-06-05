@@ -1,5 +1,9 @@
 <?php
+// Koneksi
+require_once("koneksi.php");
 //Routing dari URL ke Obyek Class PHP
+
+    session_start();
 if (isset($_GET['page']) && isset($_GET['aksi'])) {
     $page = $_GET['page']; // Berisi nama page
     $aksi = $_GET['aksi']; // Aksi Dari setiap page
@@ -8,10 +12,10 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
     if ($page == "auth") {
         if ($aksi == 'view') {
             require_once("View/auth/index.php");
-        } else if ($aksi == 'loginAslab') {
-            require_once("View/auth/login_aslab.php");
-        } else if ($aksi == 'loginPraktikan') {
-            require_once("View/auth/login_praktikan.php");
+        } else if ($aksi == 'loginAdmin') {
+            require_once("View/auth/login_admin.php");
+        } else if ($aksi == 'loginPembeli') {
+            require_once("View/auth/login_pembeli.php");
         } else if ($aksi == 'authAslab') {
 
             require_once("View/menu/menu_aslab.php");
@@ -21,8 +25,8 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
             require_once("View/praktikan/index.php");
         } else if ($aksi == 'logout') {
             require_once("View/auth/index.php");
-        } else if ($aksi == 'daftarPraktikan') {
-            require_once("View/auth/daftar_praktikan.php");
+        } else if ($aksi == 'daftarPembeli') {
+            require_once("View/auth/daftar_pembeli.php");
         } else if ($aksi == 'storePraktikan') {
             require_once("View/auth/index.php");
         } else {
@@ -106,6 +110,7 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
     } else {
         echo "Page Not Found";
     }
-} else {
+}
+ else {
     header("location: index.php?page=auth&aksi=view"); //Jangan ada spasi habis location
 }
