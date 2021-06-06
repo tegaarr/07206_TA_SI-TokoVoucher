@@ -3,6 +3,11 @@
 require_once("koneksi.php");
 //Routing dari URL ke Obyek Class PHP
 
+/* Memanggil Model */
+require_once("Model/AuthModel.php");
+require_once("Model/ProdukModel.php");
+require_once("Model/AdminModel.php");
+require_once("Model/PembeliModel.php");
     session_start();
 if (isset($_GET['page']) && isset($_GET['aksi'])) {
     $page = $_GET['page']; // Berisi nama page
@@ -10,21 +15,26 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
 
     // require_once akan Dirubah Saat Modul 2
     if ($page == "auth") {
+        $auth = new AuthModel();
         if ($aksi == 'view') {
-            require_once("View/auth/index.php");
+            //require_once("View/auth/index.php");
+            $auth->index();
         } else if ($aksi == 'loginAdmin') {
-            require_once("View/auth/login_admin.php");
+            //require_once("View/auth/login_admin.php");
+            $auth->login_admin();
         } else if ($aksi == 'loginPembeli') {
-            require_once("View/auth/login_pembeli.php");
-        } else if ($aksi == 'authAslab') {
-
-            require_once("View/menu/menu_aslab.php");
-            require_once("View/aslab/index.php");
-        } else if ($aksi == 'authPraktikan') {
-            require_once("View/menu/menu_praktikan.php");
-            require_once("View/praktikan/index.php");
+            //require_once("View/auth/login_pembeli.php");
+            $auth->login_pembeli();
+        } else if ($aksi == 'authAdmin') {
+            //require_once("View/menu/menu_admin.php");
+            //require_once("View/admin/index.php");
+            $auth->authAdmin();
+        } else if ($aksi == 'authPembeli') {
+            require_once("View/menu/menu_pembeli.php");
+            require_once("View/pembeli/index.php");
         } else if ($aksi == 'logout') {
-            require_once("View/auth/index.php");
+            //require_once("View/auth/index.php");
+            $auth->logout();
         } else if ($aksi == 'daftarPembeli') {
             require_once("View/auth/daftar_pembeli.php");
         } else if ($aksi == 'storePraktikan') {
@@ -32,10 +42,10 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
         } else {
             echo "Method Not Found";
         }
-    } else if ($page == "aslab") {
-        require_once("View/menu/menu_aslab.php");
+    } else if ($page == "admin") {
+        require_once("View/menu/menu_admin.php");
         if ($aksi == 'view') {
-            require_once("View/aslab/index.php");
+            require_once("View/admin/index.php");
         } else if ($aksi == 'nilai') {
             require_once("View/aslab/nilai.php");
         } else if ($aksi == 'createNilai') {

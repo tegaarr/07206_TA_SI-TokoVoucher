@@ -16,10 +16,10 @@
                 <h2>Login Admin</h2>
             </div>
             <div class="card-body">
-                <form action="index.php?page=auth&aksi=authAslab" method="POST">
+                <form action="index.php?page=auth&aksi=authAdmin" method="POST">
                     <div class="form-group">
                         <label>Nama Admin</label>
-                        <input type="text" class="form-control" name="npm">
+                        <input type="text" class="form-control" name="nama_admin">
                     </div>
                     <div class="form-group">
                         <label>Password</label>

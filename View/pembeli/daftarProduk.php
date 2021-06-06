@@ -14,7 +14,7 @@
 
         <div class="card mt-5">
             <div class=" card-header">
-                <h2>Daftar Praktikum</h2>
+                <h2>Daftar Produk</h2>
                 <a href="index.php?page=praktikan&aksi=view" class="btn btn-info float-right">Kembali</a>
             </div>
             <div class="card-body">
@@ -22,7 +22,7 @@
                     <div class="row">
                         <div class="col">
                             <!-- Digant saat modul 3 -->
-                            <label for="">Praktikum : </label>
+                            <label for="">Produk : </label>
                             <select name="praktikum" class="form-control">
                                 <option value="1">Basis Data</option>
                             </select>
