@@ -30,8 +30,9 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
             //require_once("View/admin/index.php");
             $auth->authAdmin();
         } else if ($aksi == 'authPembeli') {
-            require_once("View/menu/menu_pembeli.php");
-            require_once("View/pembeli/index.php");
+            // require_once("View/menu/menu_pembeli.php");
+            // require_once("View/pembeli/index.php");
+            $auth->authPembeli();
         } else if ($aksi == 'logout') {
             //require_once("View/auth/index.php");
             $auth->logout();
@@ -87,19 +88,21 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
         } else {
             echo "Method Not Found";
         }
-    } else if ($page == "praktikan") {
-        require_once("View/menu/menu_praktikan.php");
+    } else if ($page == "pembeli") {
+        $pembeli = new PembeliModel();
+        require_once("View/menu/menu_pembeli.php");
         if ($aksi == 'view') {
-            require_once("View/praktikan/index.php");
+            // require_once("View/pembeli/index.php");
+            $pembeli->index();
         } else if ($aksi == 'edit') {
-            require_once("View/praktikan/edit.php");
+            require_once("View/pembeli/edit.php");
         } else if ($aksi == 'update') {
-            require_once("View/praktikan/index.php");
-        } else if ($aksi == 'praktikum') {
-            require_once("View/praktikan/praktikum.php");
-        } else if ($aksi == 'daftarPraktikum') {
-            require_once("View/praktikan/daftarPraktikum.php");
-        } else if ($aksi == 'storePraktikum') {
+            require_once("View/pembeli/index.php");
+        } else if ($aksi == 'pesanan') {
+            require_once("View/pembeli/praktikum.php");
+        } else if ($aksi == 'daftarPesanan') {
+            require_once("View/pembeli/daftarProduk.php");
+        } else if ($aksi == 'storePesanan') {
             require_once("View/praktikan/index.php");
         } else if ($aksi == 'nilaiPraktikan') {
             require_once("View/praktikan/nilaiPraktikan.php");

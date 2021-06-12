@@ -47,8 +47,36 @@ class AuthModel{
         session_destroy();
         header("location:index.php?page=auth&aksi=view&pesan=Berhasil Logout");
     }
+
+    public function prosesloginPembeli($email, $password)
+    {
+        $sql = "SELECT * FROM pembeli WHERE
+        email_pembeli = '$email' and password = '$password'";
+        $query = koneksi()->query($sql);
+        return $query->fetch_assoc();
+    }
+
+    public function authPembeli()
+    {
+        $email = $_POST['email_pembeli'];
+        $password = $_POST['password'];
+        $data = $this->prosesloginPembeli($email, $password);
+
+        if($data)
+        {
+            $_SESSION['role'] = 'pembeli';
+            $_SESSION['pembeli'] = $data;
+
+            header("location:index.php?page=pembeli&aksi=view&pesan=Berhasil Login"); 
+        } else
+        {
+            header("location:index.php?page=auth&aksi=loginPembeli&pesan=Gagal Login");
+        }
+    }
 }
+
+    
 // $tes = new AuthModel();
-// var_export($tes->prosesloginAdmin('Tegar', '1234'));
+// var_export($tes->authAdmin());
 // die();
 ?>

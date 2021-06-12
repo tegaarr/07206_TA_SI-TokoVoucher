@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Praktikum Praktikan</title>
+    <title>Pesanan Pembeli</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 </head>
 
@@ -15,25 +15,28 @@
 
             <div class="card mt-5">
                 <div class=" card-header">
-                    <h2>Praktikum</h2>
-                    <a href="index.php?page=praktikan&aksi=daftarPraktikum" class="btn btn-primary float-right">Daftar Praktikum</a>
+                    <h2>Pesanan Anda</h2>
+                    <a href="index.php?page=pembeli&aksi=daftarPesanan" class="btn btn-primary float-right">Pesan</a>
                 </div>
                 <div class="card-body">
                     <table class="table table-striped table-bordered">
                         <thead>
                             <tr>
                                 <th>No.</th>
-                                <th>Praktikum</th>
-                                <th>Aksi</th>
+                                <th>Produk Pesanan</th>
+                                <th>Tanggal Pembelian</th>
+                                <th>Status Pesanan</th>
                             </tr>
                         </thead>
                         <tbody>
                             <!-- Diganti Saat Modul 2 -->
                             <tr>
                                 <td>1</td>
-                                <td>John Doe</td>
+                                <td>ML199</td>
+                                <td>2021-12-06</td>
                                 <td>
-                                    <a href="index.php?page=praktikan&aksi=nilaiPraktikan&idPraktikum=#" class="btn btn-info">Cek Nilai</a>
+                                    <!-- <a href="index.php?page=praktikan&aksi=nilaiPraktikan&idPraktikum=#" class="btn btn-info">Cek Nilai</a> -->
+                                    Proses
                                 </td>
                             </tr>
                         </tbody>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pendaftaran Pembeli</title>
+    <title>Daftar Sebagai Pembeli</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 </head>
 
@@ -14,7 +14,7 @@
         <div class="container">
             <div class="card mt-5">
                 <div class=" card-header">
-                    <h2>Pendaftaran Pembeli</h2>
+                    <h2>Pendaftaran</h2>
                 </div>
                 <div class="card-body">
 
@@ -22,7 +22,8 @@
                         <thead>
                             <tr>
                                 <th>No.</th>
-                                <th>Nama Praktikan</th>
+                                <th>Nama Pembeli</th>
+                                <th>Email</th>
                                 <th>Praktikum</th>
                                 <th>Aksi</th>
                             </tr>

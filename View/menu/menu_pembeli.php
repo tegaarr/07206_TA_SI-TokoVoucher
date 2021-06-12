@@ -11,24 +11,24 @@
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Sistem Informasi Praktikum | </a>
+        <a class="navbar-brand" href="#">Sistem Informasi Voucher Game | </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.php?page=praktikan&aksi=view">Profil</a>
+                    <a class="nav-link" href="index.php?page=pembeli&aksi=view">Profil</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.php?page=praktikan&aksi=praktikum">Praktikum</a>
+                    <a class="nav-link" href="index.php?page=pembeli&aksi=pesanan">Pesanan</a>
                 </li>
 
             </ul>
         </div>
         <div class="form-inline">
             <!-- Diganti Saat Modul 2 -->
-            <label class="form-control mr-sm-2">Praktikan : {SESSION LOGIN PRAKTIKAn} </label>
+            <label class="form-control mr-sm-2">Pembeli : <?=$_SESSION['pembeli']['nama_pembeli']?> </label>
             <a class=" btn btn-danger" href="index.php?page=auth&aksi=logout">Logout</a>
         </div>
     </nav>

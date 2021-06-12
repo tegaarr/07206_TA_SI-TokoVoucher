@@ -6,20 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <title>Login Praktikan</title>
+    <title>Login Pembeli</title>
 </head>
 
 <body>
     <div class="container">
         <div class="card mt-5">
             <div class="card-header">
-                <h2>Login Praktikan</h2>
+                <h2>Login Pembeli</h2>
             </div>
             <div class="card-body">
-                <form action="index.php?page=auth&aksi=authPraktikan" method="POST">
+                <form action="index.php?page=auth&aksi=authPembeli" method="POST">
                     <div class="form-group">
-                        <label>NPM</label>
-                        <input type="text" class="form-control" name="npm">
+                        <label>Email</label>
+                        <input type="text" class="form-control" name="email_pembeli">
                     </div>
                     <div class="form-group">
                         <label>Password</label>
