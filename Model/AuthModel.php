@@ -19,7 +19,7 @@ class AuthModel{
     public function prosesloginAdmin($nama, $password)
     {
         $sql = "SELECT * FROM admin WHERE
-        nama_admin = '$nama' and password = '$password'";
+        nama_admin = '$nama' and password_admin = '$password'";
         $query = koneksi()->query($sql);
         return $query->fetch_assoc();
     }
@@ -27,7 +27,7 @@ class AuthModel{
     public function authAdmin()
     {
         $nama = $_POST['nama_admin'];
-        $password = $_POST['password'];
+        $password = $_POST['password_admin'];
         $data = $this->prosesloginAdmin($nama, $password);
 
         if($data)
@@ -71,6 +71,29 @@ class AuthModel{
         } else
         {
             header("location:index.php?page=auth&aksi=loginPembeli&pesan=Gagal Login");
+        }
+    }
+
+    public function daftarPembeli()
+    {
+        require_once("View/auth/daftar_pembeli.php");
+    }
+
+    public function prosesStorePembeli($nama, $email, $no_hp, $password){
+        $sql = "INSERT INTO pembeli(nama_pembeli, email_pembeli, telp_pembeli, password) VALUES ('$nama', '$email', '$no_hp', '$password')";
+        return koneksi()->query($sql);
+    }
+
+    public function storePembeli()
+    {
+        $nama = $_POST['nama_pembeli'];
+        $email = $_POST['email_pembeli'];
+        $no_hp = $_POST['telp_pembeli'];
+        $password = $_POST['password'];
+        if($this->prosesStorePembeli($nama, $email, $no_hp, $password)){
+            header("location: index.php?page=auth&aksi=view&pesan=Berhasil Daftar");
+        }else{
+            header("location: index.php?page=auth&aksi=daftarPembeli&pesan=Gagal Daftar");
         }
     }
 }

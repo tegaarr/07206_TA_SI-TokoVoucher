@@ -11,6 +11,12 @@ class AdminModel{
         extract($data);
         require_once("View/admin/index.php");
     }
+
+    public function getJenisProduk($idJenis)
+    {
+        $sql = "SELECT * FROM jenisproduk where id_jenis = '$idJenis'";
+    }
+    
     
 
 }

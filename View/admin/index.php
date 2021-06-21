@@ -31,15 +31,20 @@
                         </thead>
                         <tbody>
                             <!-- Diganti saat modul 2 -->
+                            <?php $no = 1;
+                            foreach($data as $row) :?>
                             <tr>
-                                <td>1</td>
-                                <td>ML100</td>
-                                <td>John Doe</td>
-                                <td>ML49117935</td>
-                                <td>087</td>
+                                <td><?=$no?></td>
+                                <td><?=$row['nama_produk']?></td>
+                                <td><?=$row['nama_pembeli']?></td>
+                                <td><?=$row['data_akun']?></td>
+                                <td><?=$row['telp_pembeli']?></td>
                                 <!-- id Diganti saat modul 3 -->
-                                <td><a href="index.php?page=aslab&aksi=nilai&id=#" class="btn btn-outline-primary">Nilai</a></td>
+                                <td><a href="index.php?page=admin&aksi=pesanan&id=<?=$row['id_pembeli']?>" class="btn btn-outline-primary">Pesanan</a>
+                                </td>
                             </tr>
+                            <?php $no++;
+                            endforeach;?>
                         </tbody>
                     </table>
                 </div>

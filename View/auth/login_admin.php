@@ -23,7 +23,7 @@
                     </div>
                     <div class="form-group">
                         <label>Password</label>
-                        <input type="password" class="form-control" name="password">
+                        <input type="password" class="form-control" name="password_admin">
                     </div>
                     <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
                     <a href="index.php?page=auth&aksi=view" class="btn btn-danger btn-lg btn-block">Kembali</a>

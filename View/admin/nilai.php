@@ -16,8 +16,8 @@
                 <div class=" card-header">
                     <h2>Data Nilai Praktikan</h2>
                     <!-- id diganti saat modul 2 -->
-                    <a href="index.php?page=aslab&aksi=createNilai&id=#" class="btn btn-success float-right ml-3">Insert Nilai</a>
-                    <a href="index.php?page=aslab&aksi=view" class="btn btn-info float-right ">Kembali</a>
+                    <a href="index.php?page=admin&aksi=createNilai&id=#" class="btn btn-success float-right ml-3">Insert Nilai</a>
+                    <a href="index.php?page=admin&aksi=view" class="btn btn-info float-right ">Kembali</a>
                 </div>
                 <div class="card-body">
 

@@ -16,7 +16,7 @@
                 <h2>Daftar Pembeli</h2>
             </div>
             <div class="card-body">
-                <form action="index.php?page=auth&aksi=storePraktikan" method="POST">
+                <form action="index.php?page=auth&aksi=storePembeli" method="POST">
                     <div class="form-group">
                         <label>Nama : </label>
                         <input type="text" class="form-control" name="nama_pembeli">

@@ -24,12 +24,16 @@
                             <!-- Digant saat modul 3 -->
                             <label for="">Produk : </label>
                             <select name="produk" class="form-control">
-                                <option value="1">ML100</option>
-                                <option value="2">ML199</option>
+                                <!-- <option value="1">ML100</option>
+                                <option value="2">ML199</option> -->
+                                <?php foreach($data as $row): ?>
+                                <option value="<?= $row['idJenis']?>"><?= $row['namaJenis']?></option>
+                                <option value="<?= $row['idProduk']?>"><?= $row['namaProduk']?></option>
+                            <?php endforeach; ?>
                             </select>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary float-right mt-3">Daftar</button>
+                    <button type="submit" class="btn btn-primary float-right mt-3">Pesan</button>
                 </form>
 
 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Produk</title>
+    <title>Data Praktikum</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 </head>
 
@@ -14,8 +14,8 @@
         <div class="container">
             <div class="card mt-5">
                 <div class=" card-header">
-                    <h2>Data Modul</h2>
-                    <a href="index.php?page=modul&aksi=create" class="btn btn-success float-right">Tambah Modul</a>
+                    <h2>Data Praktikum</h2>
+                    <a href="index.php?page=praktikum&aksi=create" class="btn btn-success float-right">Tambah Praktikum</a>
                 </div>
                 <div class="card-body">
 
@@ -23,45 +23,32 @@
                         <thead>
                             <tr>
                                 <th>No.</th>
-                                <th>Praktikum</th>
-                                <th>Nama Modul</th>
+                                <th>Nama</th>
+                                <th>Tahun</th>
+                                <th>Status</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- Diganti Saat modul 2 -->
+                            <!-- Diganti Saat Modul 2 -->
+                            <?php $no = 1;
+                            foreach ($data as $row):?>
                             <tr>
-                                <td>1</td>
-                                <td>Basis Data</td>
-                                <td>Modul 1</td>
+                                <td><?=$no?></td>
+                                <td><?= $row['nama']?></td>
+                                <td><?= date('Y', strtotime($row['tahun']))?></td>
+                                <td><?= $row['status'] == 0 ? '<span class="badge badge-danger">Tidak Aktif</span>' : '<span class="badge badge-success">Aktif</span>'?></td>
                                 <td>
-                                    <a href="index.php?page=modul&aksi=delete&id=#" class="btn btn-danger">Hapus</a>
+                                    <a href="index.php?page=praktikum&aksi=edit&id=<?= $row['id']?>" class="btn btn-warning">Edit</a>
+                                    <?php if($row['status'] == 0) : ?>
+                                    <a href="index.php?page=praktikum&aksi=aktifkan&id=<?= $row['id']?>" class="btn btn-success">Aktifkan</a>
+                                    <?php elseif($row['status'] == 1) : ?>
+                                    <a href="index.php?page=praktikum&aksi=nonAktifkan&id=<?= $row['id']?>" class="btn btn-danger">Non-Aktifkan</a>
+                                    <?php endif; ?>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Basis Data</td>
-                                <td>Modul 2</td>
-                                <td>
-                                    <a href="index.php?page=modul&aksi=delete&id=#" class="btn btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Basis Data</td>
-                                <td>Modul 3</td>
-                                <td>
-                                    <a href="index.php?page=modul&aksi=delete&id=#" class="btn btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Basis Data</td>
-                                <td>Modul 4</td>
-                                <td>
-                                    <a href="index.php?page=modul&aksi=delete&id=#" class="btn btn-danger">Hapus</a>
-                                </td>
-                            </tr>
+                            <?php $no++;
+                            endforeach;?>
                         </tbody>
                     </table>
                 </div>

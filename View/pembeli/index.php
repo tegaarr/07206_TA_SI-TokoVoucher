@@ -21,18 +21,18 @@
                 <div class="card-body">
                     <div class="row ml-4">
                         <div class="form-inline">
-                            <label class="form-control mr-sm-2 col-form-label"><span class="badge badge-primary">Nama Pembeli</span> : John Doe </label>
+                            <label class="form-control mr-sm-2 col-form-label"><span class="badge badge-primary">Nama Pembeli</span> : <?=$data['nama_pembeli']?> </label>
                         </div>
                     </div>
 
                     <div class="row ml-4 mt-2">
                         <div class="form-inline">
-                            <label class="form-control mr-sm-2 col-form-label"><span class="badge badge-primary">Email Pembeli</span> : bagas@gmail.com </label>
+                            <label class="form-control mr-sm-2 col-form-label"><span class="badge badge-primary">Email Pembeli</span> : <?=$data['email_pembeli']?> </label>
                         </div>
                     </div>
                     <div class="row ml-4 mt-2">
                         <div class="form-inline">
-                            <label class="form-control mr-sm-2 col-form-label"><span class="badge badge-primary">No.Telp Pembeli</span> : 00000123 </label>
+                            <label class="form-control mr-sm-2 col-form-label"><span class="badge badge-primary">No.Telp Pembeli</span> : <?=$data['telp_pembeli']?> </label>
                         </div>
                     </div>
                 </div>
