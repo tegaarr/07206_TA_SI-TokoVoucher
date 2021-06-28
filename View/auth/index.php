@@ -15,13 +15,11 @@
             <div class="card mt-5">
                 <div class="card-header">
 
-                    <h2>Selamat Datang Di Toko Voucher Game</h2>
+                    <h2>Toko Voucher Game</h2>
 
                 </div>
                 <div class="card-body">
                     <a href="index.php?page=auth&aksi=loginAdmin" class="btn btn-primary">Login Admin</a>
-                    <a href="index.php?page=auth&aksi=loginPembeli" class="btn btn-dark">Login Pembeli</a>
-                    <a href="index.php?page=auth&aksi=daftarPembeli" class="btn btn-success">Daftar Pembeli</a>
                 </div>
             </div>
         </div>

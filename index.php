@@ -8,6 +8,14 @@ require_once("Model/AuthModel.php");
 require_once("Model/ProdukModel.php");
 require_once("Model/AdminModel.php");
 require_once("Model/PembeliModel.php");
+require_once("Model/TransaksiModel.php");
+
+require_once("Controller/AuthController.php");
+require_once("Controller/ProdukController.php");
+require_once("Controller/AdminController.php");
+require_once("Controller/PembeliController.php");
+require_once("Controller/TransaksiController.php");
+
     session_start();
 if (isset($_GET['page']) && isset($_GET['aksi'])) {
     $page = $_GET['page']; // Berisi nama page
@@ -15,115 +23,99 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
 
     // require_once akan Dirubah Saat Modul 2
     if ($page == "auth") {
-        $auth = new AuthModel();
+        $auth = new AuthController();
         if ($aksi == 'view') {
-            //require_once("View/auth/index.php");
             $auth->index();
         } else if ($aksi == 'loginAdmin') {
-            //require_once("View/auth/login_admin.php");
             $auth->login_admin();
-        } else if ($aksi == 'loginPembeli') {
-            //require_once("View/auth/login_pembeli.php");
-            $auth->login_pembeli();
         } else if ($aksi == 'authAdmin') {
-            //require_once("View/menu/menu_admin.php");
-            //require_once("View/admin/index.php");
             $auth->authAdmin();
-        } else if ($aksi == 'authPembeli') {
-            // require_once("View/menu/menu_pembeli.php");
-            // require_once("View/pembeli/index.php");
-            $auth->authPembeli();
         } else if ($aksi == 'logout') {
-            //require_once("View/auth/index.php");
             $auth->logout();
-        } else if ($aksi == 'daftarPembeli') {
-            //require_once("View/auth/daftar_pembeli.php");
-            $auth->daftarPembeli();
-        } else if ($aksi == 'storePembeli') {
-            //require_once("View/auth/index.php");
-            $auth->storePembeli();
         } else {
             echo "Method Not Found";
         }
     } else if ($page == "admin") {
+        $admin = new AdminController();
         require_once("View/menu/menu_admin.php");
         if ($aksi == 'view') {
-            require_once("View/admin/index.php");
+            $admin->index();
         } else if ($aksi == 'pesanan') {
             require_once("View/admin/nilai.php");
-        } else if ($aksi == 'createNilai') {
-            require_once("View/admin/createNilai.php");
-        } else if ($aksi == 'storeNilai') {
-            require_once("View/admin/nilai.php");
+        } else if ($aksi == 'daftarPembeli') {
+            $admin->daftarPembeli();
+        } else if ($aksi == 'storePembeli') {
+            $admin->storePembeli();
         } else {
             echo "Method Not Found";
         }
     } else if ($page == "produk") {
-        $produk = new ProdukModel();
-        require_once("View/menu/menu_aslab.php");
+        $produk = new ProdukController();
+        require_once("View/menu/menu_admin.php");
         if ($aksi == 'view') {
-            // require_once("View/produk/index.php");
-            $produk->index();
+            $produk->indexProdukByJenis();
         } else if ($aksi == 'create') {
-            require_once("View/produk/create.php");
+            $produk->createProduk();
         } else if ($aksi == 'store') {
-            require_once("View/produk/index.php");
+            $produk->storeProduk();
         } else if ($aksi == 'edit') {
-            require_once("View/produk/edit.php");;
+            $produk->edit();
         } else if ($aksi == 'update') {
-            require_once("View/produk/index.php");
+            $produk->updateProduk();
         } else if ($aksi == 'aktifkan') {
-            require_once("View/praktikum/index.php");
+            $produk->aktifkanProduk();
         } else if ($aksi == 'nonAktifkan') {
-            require_once("View/praktikum/index.php");
+            $produk->NonAktifkanProduk();
         } else {
             echo "Method Not Found";
         }
     } else if ($page == "jenisproduk") {
-        require_once("View/menu/menu_aslab.php");
+        $produk = new ProdukController();
+        require_once("View/menu/menu_admin.php");
         if ($aksi == 'view') {
-            require_once("View/jenisproduk/index.php");
+            $produk->indexJenis();
         } else if ($aksi == 'create') {
-            require_once("View/jenisproduk/create.php");
+            $produk->createJenis();
         } else if ($aksi == 'store') {
-            require_once("View/jenisproduk/index.php");
+            $produk->storeJenis();
+        } else if ($aksi == 'edit') {
+            $produk->editJenis();
+        }else if ($aksi == 'update') {
+            $produk->updateJenis();
         } else if ($aksi == 'delete') {
-            require_once("View/jenisproduk/index.php");
-        } else {
+            $produk->deleteJenis();
+        }
+        else {
             echo "Method Not Found";
         }
     } else if ($page == "pembeli") {
-        $pembeli = new PembeliModel();
-        require_once("View/menu/menu_pembeli.php");
-        if ($aksi == 'view') {
-            // require_once("View/pembeli/index.php");
-            $pembeli->index();
-        } else if ($aksi == 'edit') {
-            //require_once("View/pembeli/edit.php");
+        $pembeli = new PembeliController();
+          if ($aksi == 'edit') {
             $pembeli->edit();
         } else if ($aksi == 'update') {
-            //require_once("View/pembeli/index.php");
             $pembeli->update();
-        } else if ($aksi == 'pesanan') {
-            require_once("View/pembeli/pesanan.php");
-        } else if ($aksi == 'daftarProduk') {
-            require_once("View/pembeli/daftarProduk.php");
-        } else if ($aksi == 'storePesanan') {
-            //require_once("View/pembeli/index.php");
-            $pembeli->index();
-        } else if ($aksi == 'nilaiPraktikan') {
-            require_once("View/pembeli/nilaiPraktikan.php");
+        } else if ($aksi == 'delete') {
+            $pembeli->delete();
         } else {
             echo "Method Not Found";
         }
     } else if ($page == 'transaksi') {
-        require_once("View/menu/menu_aslab.php");
+        $transaksi = new TransaksiController();
+        require_once("View/menu/menu_admin.php");
         if ($aksi == 'view') {
-            require_once("View/transaksi/index.php");
+            $transaksi->indexPembeli();
+        } else if ($aksi == 'indexJenis') {
+            $transaksi->indexJenis();
+        } else if ($aksi == 'indexProduk') {
+            $transaksi->indexProduk();
+        } else if ($aksi == 'daftarProduk') {
+            $transaksi->daftarProduk();
+        } else if ($aksi == 'storePesanan') {
+            $transaksi->storePesanan();
+        } else if ($aksi == 'pesanan') {
+            $transaksi->indexPesanan();
         } else if ($aksi == 'verif') {
-            require_once("View/transaksi/index.php");
-        } else if ($aksi == 'unVerif') {
-            require_once("View/transaksi/index.php");
+            $transaksi->updatePesanan();
         } else {
             echo "Method Not Found";
         }

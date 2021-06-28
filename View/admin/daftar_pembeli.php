@@ -16,25 +16,25 @@
                 <h2>Daftar Pembeli</h2>
             </div>
             <div class="card-body">
-                <form action="index.php?page=auth&aksi=storePembeli" method="POST">
+                <form action="index.php?page=admin&aksi=storePembeli" method="POST">
                     <div class="form-group">
                         <label>Nama : </label>
-                        <input type="text" class="form-control" name="nama_pembeli">
+                        <input type="text" class="form-control" name="nama_pembeli" required>
                     </div>
                     <div class="form-group">
                         <label>Email : </label>
-                        <input type="text" class="form-control" name="email_pembeli">
-                    </div>
-                    <div class="form-group">
-                        <label>Password : </label>
-                        <input type="password" class="form-control" name="password">
+                        <input type="text" class="form-control" name="email_pembeli" required>
                     </div>
                     <div class="form-group">
                         <label>No.Telpon : </label>
-                        <input type="text" class="form-control" name="telp_pembeli">
+                        <input type="text" class="form-control" name="telp_pembeli" required>
                     </div>
+                    <!-- <div class="form-group">
+                        <label>Data Akun : </label>
+                        <input type="text" class="form-control" name="data_akun">
+                    </div> -->
                     <button type="submit" class="btn btn-success btn-lg btn-block">Daftar</button>
-                    <a href="index.php?page=auth&aksi=view" class="btn btn-danger btn-lg btn-block">Kembali</a>
+                    <a href="index.php?page=admin&aksi=view" class="btn btn-danger btn-lg btn-block">Kembali</a>
                 </form>
             </div>
         </div>

@@ -16,18 +16,14 @@
             <div class="card mt-5">
                 <div class=" card-header">
                     <h2>Tambah Kategori</h2>
-                    <a href="index.php?page=produk&aksi=view&id_jenis=<?=$data['id_jenis']?>" class="btn btn-info float-right">Kembali</a>
+                    <a href="index.php?page=jenisproduk&aksi=view" class="btn btn-info float-right">Kembali</a>
                 </div>
                 <div class="card-body">
-                    <form action="index.php?page=produk&aksi=store" method="POST">
+                    <form action="index.php?page=jenisproduk&aksi=store" method="POST">
                         <div class="row">
                             <div class="col">
-                                <label for="">Nama Produk :</label>
-                                <input type="text" name="nama_produk" class="form-control" required>
-                            </div>
-                            <div class="col">
-                                <label for="">Harga Produk : </label>
-                                <input type="text" name="harga_produk" class="form-control" required>
+                                <label for="">Nama :</label>
+                                <input type="text" name="nama_jenis" class="form-control" required>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary float-right mt-3">Simpan</button>

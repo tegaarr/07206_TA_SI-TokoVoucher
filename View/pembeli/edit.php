@@ -15,7 +15,7 @@
         <div class="card mt-5">
             <div class="card-header text-center">
                 <h2>Edit Profil</h2>
-                <a href="index.php?page=pembeli&aksi=view" class="btn btn-info float-right">Kembali</a>
+                <a href="index.php?page=admin&aksi=view" class="btn btn-info float-right">Kembali</a>
             </div>
             <div class="card-body">
                 <form action="index.php?page=pembeli&aksi=update" method="POST">
@@ -28,10 +28,6 @@
                     <div class="form-group">
                         <label for="">Email Pembeli</label>
                         <input type="text" name="email_pembeli" class="form-control" value="<?=$data['email_pembeli']?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Password</label>
-                        <input type="password" name="password" class="form-control" value="<?=$data['password']?>">
                     </div>
                     <div class="form-group">
                         <label for="">No.Telp Pembeli</label>

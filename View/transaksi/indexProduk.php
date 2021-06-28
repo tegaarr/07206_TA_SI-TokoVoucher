@@ -15,8 +15,8 @@
             <div class="card mt-5">
                 <div class=" card-header">
                     <h2>Data Produk</h2>
-                    <a href="index.php?page=produk&aksi=create" class="btn btn-success float-right">Tambah Produk Baru</a>
-                    <a href="index.php?page=jenisproduk&aksi=view" class="btn btn-warning float-left">Kembali ke Jenis Produk</a>
+                    <a href="index.php?page=transaksi&aksi=view" class="btn btn-success float-right">Ke Transaksi</a>
+                    <a href="index.php?page=transaksi&aksi=indexJenis" class="btn btn-warning float-left">Kembali ke Jenis Produk</a>
                 </div>
                 <div class="card-body">
                 
@@ -27,26 +27,18 @@
                                 <th>Nama Produk</th>
                                 <th>Harga</th>
                                 <th>Status</th>
-                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             <!-- Diganti Saat Modul 2 -->
                             <tr>
                             <?php $no = 1;
-                            foreach($produk as $row) : ?>
+                            foreach($data as $row) : ?>
                                 <td><?= $no?></td>
                                 <td><?= $row['nama_produk']?></td>
                                 <td><?= $row['harga_produk']?></td>
                                 <td><?= $row['status_produk'] == 0 ? '<span class="badge badge-danger">Kosong</span>' 
                                 : '<span class="badge badge-success">Ready</span>'?>
-                                </td>
-                                <td><a href="index.php?page=produk&aksi=edit&id_produk=<?= $row['id_produk']?>" class="btn btn-warning">Edit</a>
-                                    <?php if($row['status_produk'] == 0) : ?>
-                                    <a href="index.php?page=produk&aksi=aktifkan&id_produk=<?= $row['id_produk']?>" class="btn btn-success">Update Produk</a>
-                                    <?php elseif($row['status_produk'] == 1) : ?>
-                                    <a href="index.php?page=produk&aksi=nonAktifkan&id_produk=<?= $row['id_produk']?>" class="btn btn-danger">Update Produk</a>
-                                    <?php endif; ?>
                                 </td>
                             </tr>
                             <?php $no++;

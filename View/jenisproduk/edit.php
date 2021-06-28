@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Kategori</title>
+    <title>Edit Jenis Produk</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 </head>
 
@@ -15,19 +15,17 @@
 
             <div class="card mt-5">
                 <div class=" card-header">
-                    <h2>Tambah Kategori</h2>
-                    <a href="index.php?page=produk&aksi=view&id_jenis=<?=$data['id_jenis']?>" class="btn btn-info float-right">Kembali</a>
+                    <h2>Edit Data Jenis Produk</h2>
+                    <a href="index.php?page=jenisproduk&aksi=view" class="btn btn-info float-right">Kembali</a>
                 </div>
                 <div class="card-body">
-                    <form action="index.php?page=produk&aksi=store" method="POST">
+                    <form action="index.php?page=jenisproduk&aksi=update&id_jenis=<?=$produk['id_jenis']?>" method="POST">
+                        <!-- Digant saat modul 3 -->
+                        <input type="hidden" name="id_jenis" value="<?=$produk['id_jenis']?>">
                         <div class="row">
                             <div class="col">
-                                <label for="">Nama Produk :</label>
-                                <input type="text" name="nama_produk" class="form-control" required>
-                            </div>
-                            <div class="col">
-                                <label for="">Harga Produk : </label>
-                                <input type="text" name="harga_produk" class="form-control" required>
+                                <label for="">Nama Jenis :</label>
+                                <input type="text" name="nama_jenis" class="form-control" value="<?=$produk['nama_jenis']?>">
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary float-right mt-3">Simpan</button>

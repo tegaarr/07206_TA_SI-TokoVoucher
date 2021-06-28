@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pendaftaran Praktikum</title>
+    <title>Data Pembeli</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 </head>
 
@@ -14,35 +14,34 @@
         <div class="container">
             <div class="card mt-5">
                 <div class=" card-header">
-                    <h2>Pendaftaran Praktikum</h2>
+                    <h2>Data Pembeli</h2>
+                    <a href="index.php?page=transaksi&aksi=daftarProduk" class="btn btn-primary float-right">Pesan</a>
                 </div>
                 <div class="card-body">
 
                     <table class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                                <th>No.</th>
-                                <th>Nama Praktikan</th>
-                                <th>Praktikum</th>
+                                <th>No Urut</th>
+                                <th>Nama Pembeli</th>
+                                <th>Email Pembeli</th>
+                                <th>No. HP</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- Diganti Saat Modul 2 -->
-                            <?php $no=1;
-                            foreach($data as $row):?>
+                            <!-- Diganti saat modul 2 -->
                             <tr>
+                                <?php $no = 1;
+                                foreach($data as $row) :?>
                                 <td><?=$no?></td>
-                                <td><?= $row['namaPraktikan']?></td>
-                                <td><?= $row['namaPraktikum']?></td>
+                                <td><?=$row['nama_pembeli']?></td>
+                                <td><?=$row['email_pembeli']?></td>
+                                <td><?=$row['telp_pembeli']?></td>
+                                <!-- id Diganti saat modul 3 -->
                                 <td>
-                                    <!-- # nanti di ganti saat modul 3 -->
-                                    <?php if($row['status'] == '0') : ?>
-                                        <a href="index.php?page=daftarprak&aksi=verif&id=<?= $row['idDaftar'] ?>" class="btn btn-success">Verif</a>
-                                        <?php else : ?>
-                                        <a href="index.php?page=daftarprak&aksi=unVerif&id=<?= $row['idDaftar'] ?>&idPraktikan=<?= $row['id_Praktikan'] ?>" class="btn btn-danger">Un-Verif</a>
-                                        <?php endif ?>
-                                </td>
+                                <a href="index.php?page=transaksi&aksi=pesanan&id_pembeli=<?=$row['id_pembeli']?>&nama_pembeli=<?=$row['nama_pembeli']?>" class="btn btn-warning">Pesanan</a>
+                                </>
                             </tr>
                             <?php $no++;
                             endforeach;?>
@@ -56,6 +55,6 @@
     <script src="assets/js/jquery-3.3.1.slim.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.css"></script>
-</body>
+</>
 
 </html>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Nilai Praktikan</title>
+    <title>Jenis Produk</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 </head>
 
@@ -14,30 +14,30 @@
         <div class="container">
             <div class="card mt-5">
                 <div class=" card-header">
-                    <h2>Data Nilai Praktikan</h2>
-                    <!-- id diganti saat modul 2 -->
-                    <a href="index.php?page=admin&aksi=createNilai&id=#" class="btn btn-success float-right ml-3">Insert Nilai</a>
-                    <a href="index.php?page=admin&aksi=view" class="btn btn-info float-right ">Kembali</a>
+                    <h2>Jenis Produk</h2>
+                    <a href="index.php?page=transaksi&aksi=view" class="btn btn-primary float-right">Kembali</a>
                 </div>
                 <div class="card-body">
-
+                
                     <table class="table table-striped table-bordered">
-                        <!-- Diganti saat modul 2 -->
                         <thead>
                             <tr>
-                                <td>Modul 1</td>
-                                <td>Modul 2</td>
-                                <td>Modul 3</td>
-                                <td>Modul 4</td>
+                                <th>No.</th>
+                                <th>Jenis Produk</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php $no = 1;
+                            foreach ($data as $row) : ?>
                             <tr>
-                                <td>70</td>
-                                <td>60</td>
-                                <td>50</td>
-                                <td>10</td>
+                                <td><?=$no?></td>
+                                <td><?=$row['nama_jenis']?></td>
+                                <td><a href="index.php?page=transaksi&aksi=indexProduk&id_jenis=<?= $row['id_jenis']?>" class="btn btn-info">Tampilkan Produk</a>
+                                </td>
                             </tr>
+                            <?php $no++;
+                            endforeach;?>
                         </tbody>
                     </table>
                 </div>

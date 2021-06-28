@@ -5,40 +5,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pesanan Pembeli</title>
+    <title>Jenis Produk</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 </head>
 
 <body>
     <center>
         <div class="container">
-
             <div class="card mt-5">
                 <div class=" card-header">
-                    <h2>Pesanan Anda</h2>
-                    <a href="index.php?page=pembeli&aksi=daftarProduk" class="btn btn-primary float-right">Pesan</a>
+                    <h2>Data Jenis Produk</h2>
+                    <a href="index.php?page=jenisproduk&aksi=create" class="btn btn-success float-right">Tambah Jenis Produk</a>
                 </div>
                 <div class="card-body">
+                
                     <table class="table table-striped table-bordered">
                         <thead>
                             <tr>
                                 <th>No.</th>
-                                <th>Produk Pesanan</th>
-                                <th>Tanggal Pembelian</th>
-                                <th>Status Pesanan</th>
+                                <th>Jenis</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             <!-- Diganti Saat Modul 2 -->
+                            <?php $no = 1;
+                            foreach ($data as $row) : ?>
                             <tr>
-                                <td>1</td>
-                                <td>ML199</td>
-                                <td>2021-12-06</td>
+                                <td><?=$no?></td>
+                                <td><?=$row['nama_jenis']?></td>
                                 <td>
-                                    <!-- <a href="index.php?page=praktikan&aksi=nilaiPraktikan&idPraktikum=#" class="btn btn-info">Cek Nilai</a> -->
-                                    Proses
+                                <a href="index.php?page=jenisproduk&aksi=edit&id_jenis=<?= $row['id_jenis']?>" class="btn btn-info">Edit Jenis</a>
+                                <a href="index.php?page=produk&aksi=view&id_jenis=<?= $row['id_jenis']?>" class="btn btn-warning">Edit Produk</a>
+                                <a href="index.php?page=jenisproduk&aksi=delete&id_jenis=<?= $row['id_jenis']?>" class="btn btn-danger">Hapus</a>
                                 </td>
                             </tr>
+                            <?php $no++;
+                            endforeach;?>
                         </tbody>
                     </table>
                 </div>

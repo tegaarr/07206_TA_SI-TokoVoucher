@@ -25,9 +25,9 @@
                         Management Toko
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="index.php?page=pembeli&aksi=view">Management Data Produk</a>
+                        <a class="dropdown-item" href="index.php?page=jenisproduk&aksi=view">Management Data Produk</a>
                         <!-- <a class="dropdown-item" href="index.php?page=modul&aksi=view">Management Data Modul</a> -->
-                        <a class="dropdown-item" href="index.php?page=daftarprak&aksi=view">Management Pembeli</a>
+                        <a class="dropdown-item" href="index.php?page=transaksi&aksi=view">Management Transaksi</a>
                     </div>
                 </li>
             </ul>
