@@ -100,11 +100,10 @@ class ProdukController
     {
         $nama  = $_POST['nama_produk'];
         $harga = $_POST['harga_produk'];
-        $status = $_POST['status_produk'];
-        $idjenis = $_GET['id_jenis'];
-        if($this->model->prosesStoreProduk($nama, $status, $harga, $idjenis))
+        $idjenis = $_POST['jenisproduk'];
+        if($this->model->prosesStoreProduk($nama, $harga, $idjenis))
         {
-            header("location:index.php?page=produk&aksi=view&pesan=Berhasil Tambah Data Produk");
+            header("location:index.php?page=jenisproduk&aksi=view&pesan=Berhasil Tambah Data Produk");
         }
         else
         {
@@ -133,6 +132,19 @@ class ProdukController
         else
         {
             header("location:index.php?page=produk&aksi=edit&pesan=Gagal Update Data Produk");
+        }
+    }
+
+    public function deleteProduk()
+    {
+        $idproduk = $_GET['id_produk'];
+        if($this->model->prosesDeleteProduk($idproduk))
+        {
+            header("location:index.php?page=jenisproduk&aksi=view&pesan=Berhasil Menghapus");
+        }
+        else
+        {
+            header("location:index.php?page=jenisproduk&aksi=view&pesan= Gagal Menghapus");
         }
     }
     //ubah status produk

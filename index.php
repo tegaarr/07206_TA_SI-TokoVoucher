@@ -62,6 +62,8 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
             $produk->edit();
         } else if ($aksi == 'update') {
             $produk->updateProduk();
+        } else if ($aksi == 'delete') {
+            $produk->deleteProduk();
         } else if ($aksi == 'aktifkan') {
             $produk->aktifkanProduk();
         } else if ($aksi == 'nonAktifkan') {

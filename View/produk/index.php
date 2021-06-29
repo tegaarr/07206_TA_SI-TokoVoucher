@@ -42,6 +42,7 @@
                                 : '<span class="badge badge-success">Ready</span>'?>
                                 </td>
                                 <td><a href="index.php?page=produk&aksi=edit&id_produk=<?= $row['id_produk']?>" class="btn btn-warning">Edit</a>
+                                    <a href="index.php?page=produk&aksi=delete&id_produk=<?= $row['id_produk']?>" class="btn btn-danger">Hapus</a>
                                     <?php if($row['status_produk'] == 0) : ?>
                                     <a href="index.php?page=produk&aksi=aktifkan&id_produk=<?= $row['id_produk']?>" class="btn btn-success">Update Produk</a>
                                     <?php elseif($row['status_produk'] == 1) : ?>

@@ -75,7 +75,7 @@ class ProdukModel
     }
 
     //produk manage
-    public function prosesStoreProduk($nama, $status, $harga, $idjenis)
+    public function prosesStoreProduk($nama, $harga, $idjenis)
     {
         $sql = "INSERT INTO produk(nama_produk, status_produk, harga_produk, id_jenis)
         VALUES ('$nama', 0, '$harga', '$idjenis')";

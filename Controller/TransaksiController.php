@@ -48,7 +48,6 @@ class TransaksiController
         $pembeli  = $this->model->getPembeli();
         extract($data);
         extract($pembeli);
-        extract($jenis);
         require_once("View/transaksi/daftarProduk.php");
     }
 
