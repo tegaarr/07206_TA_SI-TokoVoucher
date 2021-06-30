@@ -36,7 +36,7 @@
                             foreach($data as $row) : ?>
                                 <td><?= $no?></td>
                                 <td><?= $row['nama_produk']?></td>
-                                <td><?= $row['harga_produk']?></td>
+                                <td><?="Rp. "?><?= $row['harga_produk']?></td>
                                 <td><?= $row['status_produk'] == 0 ? '<span class="badge badge-danger">Kosong</span>' 
                                 : '<span class="badge badge-success">Ready</span>'?>
                                 </td>

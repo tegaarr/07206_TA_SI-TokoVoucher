@@ -19,13 +19,13 @@
                 <form action="index.php?page=auth&aksi=authAdmin" method="POST">
                     <div class="form-group">
                         <label>Nama Admin</label>
-                        <input type="text" class="form-control" name="nama_admin">
+                        <input type="text" class="form-control" name="nama_admin" required>
                     </div>
                     <div class="form-group">
                         <label>Password</label>
-                        <input type="password" class="form-control" name="password_admin">
+                        <input type="password" class="form-control" name="password_admin" required>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                    <button type="submit" class="btn btn-primary btn-block btn-lg">Login</button>
                     <a href="index.php?page=auth&aksi=view" class="btn btn-danger btn-lg btn-block">Kembali</a>
                 </form>
             </div>

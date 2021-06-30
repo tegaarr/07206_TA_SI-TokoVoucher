@@ -34,7 +34,7 @@ class ProdukModel
     {
         $sql  = "SELECT * FROM produk JOIN jenisproduk ON 
         produk.id_jenis = jenisproduk.id_jenis
-        WHERE produk.id_jenis = $idjenis";
+        WHERE produk.id_jenis = $idjenis order by harga_produk asc";
         $query = koneksi()->query($sql);
         $hasil = [];
         while ($data = $query->fetch_assoc()){

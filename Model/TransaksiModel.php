@@ -29,7 +29,7 @@ class TransaksiModel
 
     public function getPembeli()
     {
-        $sql = "SELECT * from pembeli";
+        $sql = "SELECT * from pembeli order by id_pembeli asc";
         $query = koneksi()->query($sql);
         $hasil = [];
         while  ($data = $query->fetch_assoc()){
@@ -47,7 +47,7 @@ class TransaksiModel
 
     public function getJenisProduk()
     {
-        $sql = "SELECT * FROM jenisproduk";
+        $sql = "SELECT * FROM jenisproduk order by id_jenis asc";
         $query = koneksi()->query($sql);
         $hasil = [];
         while ($data = $query->fetch_assoc()){
@@ -58,7 +58,7 @@ class TransaksiModel
 
     public function getProdukByStatus()
     {
-        $sql  = "SELECT * FROM produk where status_produk = 1";
+        $sql  = "SELECT * FROM produk where status_produk = 1 order by id_jenis asc, harga_produk asc";
         $query = koneksi()->query($sql);
         $hasil = [];
         while ($data = $query->fetch_assoc()){
@@ -71,7 +71,7 @@ class TransaksiModel
     {
         $sql  = "SELECT * FROM produk JOIN jenisproduk ON 
         produk.id_jenis = jenisproduk.id_jenis
-        WHERE produk.id_jenis = $idjenis";
+        WHERE produk.id_jenis = $idjenis order by harga_produk asc";
         $query = koneksi()->query($sql);
         $hasil = [];
         while ($data = $query->fetch_assoc()){

@@ -53,7 +53,7 @@
                     </div> -->
                     <div class="for-group">
                             <label for="">Tanggal Transaksi : </label>
-                            <input type="date" name="tgl_transaksi" class="form-control" required>
+                            <input type="datetime-local" name="tgl_transaksi" class="form-control" required>
                     </div>
             </div>
                     <button type="submit" class="btn btn-success float-right mt-3">Pesan</button>

@@ -16,7 +16,7 @@
                 <div class=" card-header">
                     <h2>Data Produk</h2>
                     <a href="index.php?page=produk&aksi=create" class="btn btn-success float-right">Tambah Produk Baru</a>
-                    <a href="index.php?page=jenisproduk&aksi=view" class="btn btn-warning float-left">Kembali ke Jenis Produk</a>
+                    <a href="index.php?page=jenisproduk&aksi=view" class="btn btn-info float-left">Kembali ke Jenis Produk</a>
                 </div>
                 <div class="card-body">
                 
@@ -37,7 +37,7 @@
                             foreach($produk as $row) : ?>
                                 <td><?= $no?></td>
                                 <td><?= $row['nama_produk']?></td>
-                                <td><?= $row['harga_produk']?></td>
+                                <td><?="Rp. "?><?= $row['harga_produk']?></td>
                                 <td><?= $row['status_produk'] == 0 ? '<span class="badge badge-danger">Kosong</span>' 
                                 : '<span class="badge badge-success">Ready</span>'?>
                                 </td>

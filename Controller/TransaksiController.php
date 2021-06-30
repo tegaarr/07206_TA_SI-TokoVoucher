@@ -75,11 +75,11 @@ class TransaksiController
         $idtransaksi = $_GET['id_transaksi'];
         if($this->model->prosesUpdateTransaksi($idtransaksi))
         {
-            header("location:index.php?page=transaksi&aksi=view&pesan=Berhasil Mengubah Status Transaksi");
+            header("location:index.php?page=transaksi&aksi=view&pesan=Transaksi Di Proses");
         }
         else
         {
-            header("location:index.php?page=transaksi&aksi=view&pesan=Gagal Mengubah Status Transaksi");
+            header("location:index.php?page=transaksi&aksi=view&pesan=Gagal Memproses Transaksi");
         }
     }
 }

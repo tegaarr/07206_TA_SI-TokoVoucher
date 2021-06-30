@@ -19,7 +19,7 @@
 
                 </div>
                 <div class="card-body">
-                    <a href="index.php?page=auth&aksi=loginAdmin" class="btn btn-primary">Login Admin</a>
+                    <a href="index.php?page=auth&aksi=loginAdmin" class="btn btn-primary">Login</a>
                 </div>
             </div>
         </div>
