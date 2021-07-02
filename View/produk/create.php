@@ -36,7 +36,7 @@
                             </div>
                             <div class="col">
                                 <label for="">Harga Produk : </label>
-                                <input type="text" name="harga_produk" class="form-control" required>
+                                <input type="text" pattern="[0-9]" name="harga_produk" class="form-control" required>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary float-right mt-3">Simpan</button>

@@ -14,7 +14,7 @@
         <div class="container">
             <div class="card mt-5">
                 <div class=" card-header">
-                    <h2>Data Produk</h2>
+                    <h2>Produk Yang Bisa Dibeli</h2>
                     <a href="index.php?page=transaksi&aksi=view" class="btn btn-success float-right">Ke Transaksi</a>
                     <a href="index.php?page=transaksi&aksi=indexJenis" class="btn btn-warning float-left">Kembali ke Jenis Produk</a>
                 </div>

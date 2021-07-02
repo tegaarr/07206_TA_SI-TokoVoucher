@@ -15,7 +15,7 @@
 
             <div class="card mt-5">
                 <div class=" card-header">
-                    <h2>Pesanan Anda</h2>
+                    <h2>Transaksi Anda</h2>
                     <a href="index.php?page=transaksi&aksi=view" class="btn btn-info float-right">Kembali</a>
                 </div>
                 <div class="card-body">
@@ -24,6 +24,7 @@
                             <tr>
                                 <th>No.</th>
                                 <th>Produk Yang Dibeli</th>
+                                <th>Data Akun</th>
                                 <th>Jumlah Produk Yang Dibeli</th>
                                 <th>Total Harga</th>
                                 <th>Tanggal Pembelian</th>
@@ -37,12 +38,13 @@
                             foreach($data as $row) : ?>
                                 <td><?=$no?></td>
                                 <td><?=$row['nama_produk']?></td>
+                                <td><?=$row['data_akun']?></td>
                                 <td><?=$row['jumlah_produk']?></td>
                                 <td><?="Rp. "?><?=$row['total_harga']?></td>
-                                <td><?=$row['tgl_transaksi']?></td>
+                                <td><?=date('Y-m-d',strtotime($row['tgl_transaksi']))?></td>
                                 <td>
                                 <?php if($row['status'] == 0) : ?>
-                                    <a href="index.php?page=transaksi&aksi=verif&id_transaksi=<?= $row['id_transaksi']?>" class="btn btn-success">Proses Transaksi</a>
+                                    <a href="index.php?page=transaksi&aksi=verif&id_transaksi=<?=$row['id_transaksi']?>" class="btn btn-success">Proses Transaksi</a>
                                     <?php elseif($row['status'] == 1) : ?>
                                     <a>Transaksi Selesai pada <?=$row['tgl_transaksi']?></a>
                                     <?php endif; ?>

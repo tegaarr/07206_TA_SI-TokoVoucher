@@ -7,6 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <title>Daftar Pembeli</title>
+    <style>
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+}
+input[type="number"] {
+   -moz-appearance: textfield;
+}
+</style>
 </head>
 
 <body>
@@ -23,17 +33,13 @@
                     </div>
                     <div class="form-group">
                         <label>Email : </label>
-                        <input type="text" class="form-control" name="email_pembeli" required>
+                        <input type="email" class="form-control" name="email_pembeli" required>
                     </div>
                     <div class="form-group">
                         <label>No.Telpon : </label>
-                        <input type="text" class="form-control" name="telp_pembeli" required>
+                        <input type="number" class="form-control" name="telp_pembeli" required>
                     </div>
-                    <!-- <div class="form-group">
-                        <label>Data Akun : </label>
-                        <input type="text" class="form-control" name="data_akun">
-                    </div> -->
-                    <button type="submit" class="btn btn-success btn-lg btn-block">Daftar</button>
+                    <button type="submit" class="btn btn-success btn-lg btn-block">Simpan</button>
                     <a href="index.php?page=admin&aksi=view" class="btn btn-danger btn-lg btn-block">Kembali</a>
                 </form>
             </div>

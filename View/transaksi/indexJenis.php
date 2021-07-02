@@ -15,7 +15,7 @@
             <div class="card mt-5">
                 <div class=" card-header">
                     <h2>Jenis Produk</h2>
-                    <a href="index.php?page=transaksi&aksi=view" class="btn btn-primary float-right">Kembali</a>
+                    <a href="index.php?page=transaksi&aksi=view" class="btn btn-primary float-right">Ke Data Pembeli</a>
                 </div>
                 <div class="card-body">
                 

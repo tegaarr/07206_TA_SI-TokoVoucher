@@ -7,6 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Profil</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <style>
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+}
+input[type="number"] {
+   -moz-appearance: textfield;
+}
+</style>
 </head>
 
 <body>
@@ -27,11 +37,12 @@
                     </div>
                     <div class="form-group">
                         <label for="">Email Pembeli</label>
-                        <input type="text" name="email_pembeli" class="form-control" value="<?=$data['email_pembeli']?>">
+                        <input type="email" name="email_pembeli" class="form-control" value="<?=$data['email_pembeli']?>">
                     </div>
                     <div class="form-group">
                         <label for="">No.Telp Pembeli</label>
-                        <input type="text" name="telp_pembeli" class="form-control" value="<?=$data['telp_pembeli']?>">
+                        <label for="">(08xxx)</label>
+                        <input type="number" name="telp_pembeli" class="form-control" value="<?=$data['telp_pembeli']?>">
                     </div>
                     <button type="submit" class="btn btn-success btn-lg btn-block">Simpan</button>
                 </form>

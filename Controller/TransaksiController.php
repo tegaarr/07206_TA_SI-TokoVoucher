@@ -37,7 +37,7 @@ class TransaksiController
     public function indexProduk()
     {
         $idjenis = $_GET['id_jenis'];
-        $data = $this->model->getProdukByJenis($idjenis);
+        $data = $this->model->getProdukByStatusJenis($idjenis);
         extract($data);
         require_once("View/transaksi/indexProduk.php");
     }

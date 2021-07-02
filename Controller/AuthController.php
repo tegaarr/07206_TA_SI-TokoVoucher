@@ -9,11 +9,6 @@ class AuthController
         $this->model = new AuthModel();
     }
 
-    public function index()
-    {
-        require_once("View/auth/index.php");
-    }
-
     public function login_admin()
     {
         require_once("View/auth/login_admin.php");
@@ -40,7 +35,7 @@ class AuthController
     public function logout()
     {
         session_destroy();
-        header("location:index.php?page=auth&aksi=view&pesan=Berhasil Logout");
+        header("location:index.php?page=auth&aksi=loginAdmin&pesan=Berhasil Logout");
     }
 }
 

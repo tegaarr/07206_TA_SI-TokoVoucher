@@ -24,9 +24,7 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
     // require_once akan Dirubah Saat Modul 2
     if ($page == "auth") {
         $auth = new AuthController();
-        if ($aksi == 'view') {
-            $auth->index();
-        } else if ($aksi == 'loginAdmin') {
+          if ($aksi == 'loginAdmin') {
             $auth->login_admin();
         } else if ($aksi == 'authAdmin') {
             $auth->authAdmin();
@@ -126,5 +124,5 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
     }
 }
  else {
-    header("location: index.php?page=auth&aksi=view"); //Jangan ada spasi habis location
+    header("location: index.php?page=auth&aksi=loginAdmin"); //Jangan ada spasi habis location
 }

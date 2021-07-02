@@ -40,7 +40,7 @@
                                 <td><?=$row['telp_pembeli']?></td>
                                 <!-- id Diganti saat modul 3 -->
                                 <td>
-                                <a href="index.php?page=transaksi&aksi=pesanan&id_pembeli=<?=$row['id_pembeli']?>&nama_pembeli=<?=$row['nama_pembeli']?>" class="btn btn-warning">Pesanan</a>
+                                <a href="index.php?page=transaksi&aksi=pesanan&id_pembeli=<?=$row['id_pembeli']?>&nama_pembeli=<?=$row['nama_pembeli']?>" class="btn btn-warning">Cek Pesanan</a>
                                 </>
                             </tr>
                             <?php $no++;

@@ -80,6 +80,19 @@ class TransaksiModel
         return $hasil;
     }
 
+    public function getProdukByStatusJenis($idjenis)
+    {
+        $sql  = "SELECT * FROM produk JOIN jenisproduk ON 
+        produk.id_jenis = jenisproduk.id_jenis
+        WHERE produk.id_jenis = $idjenis and status_produk = 1 order by harga_produk asc";
+        $query = koneksi()->query($sql);
+        $hasil = [];
+        while ($data = $query->fetch_assoc()){
+            $hasil[] = $data;
+        }
+        return $hasil;
+    }
+
     public function getHargaProduk($idproduk)
     {
         $sql = "SELECT harga_produk from produk WHERE id_produk = $idproduk";
