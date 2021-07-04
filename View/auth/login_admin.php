@@ -26,7 +26,6 @@
                         <input type="password" class="form-control" name="password_admin" required>
                     </div>
                     <button type="submit" class="btn btn-primary btn-lg">Login</button>
-                    <a href="index.php?page=auth&aksi=view" class="btn btn-danger btn-lg">Kembali</a>
                 </form>
             </div>
         </div>
