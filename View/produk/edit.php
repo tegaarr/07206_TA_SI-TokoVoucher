@@ -7,6 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Produk</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <style>
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+}
+input[type="number"] {
+   -moz-appearance: textfield;
+}
+</style>
 </head>
 
 <body>
@@ -32,7 +42,7 @@
                             </div>
                             <div class=" col">
                                 <label for="">Harga Produk : </label>
-                                <input type="text" pattern="[0-9]" name="harga_produk" class="form-control" value="<?=$produk['harga_produk']?>">
+                                <input type="number" name="harga_produk" class="form-control" value="<?=$produk['harga_produk']?>">
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary float-right mt-3">Simpan</button>
