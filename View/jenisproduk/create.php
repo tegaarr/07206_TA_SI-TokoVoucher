@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Kategori</title>
+    <title>Tambah Jenis Produk</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 </head>
 
@@ -15,7 +15,7 @@
 
             <div class="card mt-5">
                 <div class=" card-header">
-                    <h2>Tambah Kategori</h2>
+                    <h2>Tambah Jenis Produk</h2>
                     <a href="index.php?page=jenisproduk&aksi=view" class="btn btn-info float-right">Kembali</a>
                 </div>
                 <div class="card-body">
